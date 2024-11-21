@@ -1,0 +1,9 @@
+AR-Project_burstDebugInformation_DoNotShip/
+Library/
+Logs/
+Temp/
+UserSettings/
+.vsconfig
+AR-Project.sln
+Assembly-CSharp.csproj
+test.apk
