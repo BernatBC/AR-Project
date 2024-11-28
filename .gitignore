@@ -3,6 +3,8 @@ Library/
 Logs/
 Temp/
 UserSettings/
+obj/
+.vs/
 .vsconfig
 AR-Project.sln
 Assembly-CSharp.csproj
