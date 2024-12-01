@@ -13,10 +13,12 @@ public class ImageTracking : MonoBehaviour
     private Dictionary<string, GameObject> spawnedPrefabs = new Dictionary<string, GameObject>();
     private ARTrackedImageManager trackedImageManager;
 
-    private void Awake() {
+    private void Awake()
+    {
         trackedImageManager = FindObjectOfType<ARTrackedImageManager>();
 
-        foreach (GameObject prebaf in placeblePrefabs) {
+        foreach (GameObject prebaf in placeblePrefabs)
+        {
             GameObject newPrefab = Instantiate(prebaf, Vector3.zero, Quaternion.identity);
             newPrefab.name = prebaf.name;
             spawnedPrefabs.Add(prebaf.name, newPrefab);
@@ -24,7 +26,8 @@ public class ImageTracking : MonoBehaviour
         }
     }
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         trackedImageManager.trackedImagesChanged += ImageChanged;
     }
 
@@ -33,13 +36,16 @@ public class ImageTracking : MonoBehaviour
         trackedImageManager.trackedImagesChanged -= ImageChanged;
     }
 
-    private void ImageChanged(ARTrackedImagesChangedEventArgs eventArgs) {
-        foreach (ARTrackedImage trackedImage in eventArgs.added) {
-            UpdateImage(trackedImage);
+    private void ImageChanged(ARTrackedImagesChangedEventArgs eventArgs)
+    {
+        foreach (ARTrackedImage trackedImage in eventArgs.added)
+        {
+            //UpdateImage(trackedImage);
+            SetObjectAsChild(trackedImage);
         }
         foreach (ARTrackedImage trackedImage in eventArgs.updated)
         {
-            UpdateImage(trackedImage);
+            //UpdateImage(trackedImage);
         }
         foreach (ARTrackedImage trackedImage in eventArgs.removed)
         {
@@ -47,7 +53,19 @@ public class ImageTracking : MonoBehaviour
         }
     }
 
-    private void UpdateImage(ARTrackedImage trackedImage) {
+    private void SetObjectAsChild(ARTrackedImage trackedImage)
+    {
+        string name = trackedImage.referenceImage.name;
+
+        GameObject prefab = spawnedPrefabs[name];
+        prefab.transform.SetParent(trackedImage.transform, false);
+        prefab.transform.localPosition = Vector3.zero;
+        prefab.transform.localRotation = Quaternion.identity;
+        prefab.SetActive(true);
+    }
+
+    private void UpdateImage(ARTrackedImage trackedImage)
+    {
         string name = trackedImage.referenceImage.name;
 
         GameObject prefab = spawnedPrefabs[name];
