@@ -628,6 +628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 610476830872310292}
+  animator: {fileID: 4276102624625568330}
 --- !u!136 &3516235747361889358
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1110,16 +1111,47 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8493986383782535766, guid: 77930ec441659494c9cc315ad8d892b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6063354155749413847, guid: 77930ec441659494c9cc315ad8d892b8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.03570439
+      objectReference: {fileID: 0}
+    - target: {fileID: -6063354155749413847, guid: 77930ec441659494c9cc315ad8d892b8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.014957366
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 77930ec441659494c9cc315ad8d892b8,
         type: 3}
       propertyPath: m_Name
       value: CHEF CHARACTER
       objectReference: {fileID: 0}
+    - target: {fileID: 3988474486213828386, guid: 77930ec441659494c9cc315ad8d892b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 77930ec441659494c9cc315ad8d892b8,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: de15d658c96ec98438633ba1b940df0e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77930ec441659494c9cc315ad8d892b8, type: 3}
+--- !u!95 &4276102624625568330 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 77930ec441659494c9cc315ad8d892b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 7655364034525173723}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7906043285558390832 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 77930ec441659494c9cc315ad8d892b8,
