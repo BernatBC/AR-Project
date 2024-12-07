@@ -23,11 +23,9 @@ public class DialogSystem : MonoBehaviour
     {
         if (Input.touchCount == 1)
         {
-            Debug.Log("BENE 1 touch detected");
             Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                Debug.Log("BENE Tapped on: " + hit.collider.gameObject.name);
                 if (hit.collider.gameObject.name == gameObject.name) StartDialog();
             }
            
