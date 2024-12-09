@@ -868,7 +868,6 @@ MonoBehaviour:
   placeblePrefabs:
   - {fileID: 4693983257612203241, guid: 36a741aa661cdc14c8fbeb87d844d510, type: 3}
   - {fileID: 8965565206652958982, guid: bf9360bc9d355924fa2a8ca94d42ec88, type: 3}
-  - {fileID: 403219574433725250, guid: cac8a361adb279d41bf06cc91b452a2c, type: 3}
   - {fileID: 8471322285504986838, guid: f568ec039cc454216af2741b68d1aa11, type: 3}
 --- !u!114 &1253379535
 MonoBehaviour:
@@ -1090,3 +1089,4 @@ SceneRoots:
   - {fileID: 1001415863}
   - {fileID: 1253379533}
   - {fileID: 504786041}
+  - {fileID: 874148302}
