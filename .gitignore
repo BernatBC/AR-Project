@@ -9,3 +9,6 @@ obj/
 AR-Project.sln
 Assembly-CSharp.csproj
 test.apk
+.vscode/extensions.json
+.vscode/launch.json
+.vscode/settings.json

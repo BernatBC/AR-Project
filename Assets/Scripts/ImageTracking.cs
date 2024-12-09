@@ -17,10 +17,12 @@ public class ImageTracking : MonoBehaviour
     {
         trackedImageManager = FindObjectOfType<ARTrackedImageManager>();
 
-        foreach (GameObject prebaf in placeblePrefabs)
-        {
-            GameObject newPrefab = Instantiate(prebaf, Vector3.zero, Quaternion.identity);
+        Debug.Log("Prefabs: " + placeblePrefabs.Length);
+
+        foreach (GameObject prebaf in placeblePrefabs) {
+            GameObject newPrefab = Instantiate(prebaf, Vector3.zero, prebaf.transform.rotation);
             newPrefab.name = prebaf.name;
+            Debug.Log("Prefab name: " + newPrefab.name);
             spawnedPrefabs.Add(prebaf.name, newPrefab);
             newPrefab.SetActive(false);
         }
@@ -69,7 +71,10 @@ public class ImageTracking : MonoBehaviour
         string name = trackedImage.referenceImage.name;
 
         GameObject prefab = spawnedPrefabs[name];
-        prefab.transform.SetPositionAndRotation(trackedImage.transform.position, trackedImage.transform.rotation);
+        // prefab.transform.SetPositionAndRotation(trackedImage.transform.position, trackedImage.transform.rotation);
+        prefab.transform.position = trackedImage.transform.position;
+        //prefab.transform.rotation = Quaternion.Euler(0, trackedImage.transform.rotation.eulerAngles.y, 0);
+
         prefab.SetActive(true);
         Debug.Log("SetActive true " + name);
     }
