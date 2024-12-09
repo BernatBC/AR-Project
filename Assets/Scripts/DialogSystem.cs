@@ -40,23 +40,23 @@ public class DialogSystem : MonoBehaviour
     }
 
     public void Option1Selected() {
-        Debug.Log("Option 1 selected");
+        Debug.Log("Option 1 (sushi) selected");
         StartCoroutine(CookCoroutine());
-        // Show dish model 1
+        // Show sushi model
     }
 
     public void Option2Selected()
     {
-        Debug.Log("Option 2 selected");
+        Debug.Log("Option 2 (ramen) selected");
         StartCoroutine(CookCoroutine());
-        // Show dish model 2
+        // Show ramen model
     }
 
     public void Option3Selected()
     {
-        Debug.Log("Option 3 selected");
+        Debug.Log("Option 3 (pizza) selected");
         StartCoroutine(CookCoroutine());
-        // Show dish model 3
+        // Show pizza model
     }
 
     IEnumerator CookCoroutine()
