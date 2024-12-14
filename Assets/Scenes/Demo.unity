@@ -420,7 +420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &504786039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -867,8 +867,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placeblePrefabs:
   - {fileID: 4693983257612203241, guid: 36a741aa661cdc14c8fbeb87d844d510, type: 3}
-  - {fileID: 8965565206652958982, guid: bf9360bc9d355924fa2a8ca94d42ec88, type: 3}
+  - {fileID: 4221890653738457552, guid: fad62147b96b34107815245e063b3217, type: 3}
   - {fileID: 8471322285504986838, guid: f568ec039cc454216af2741b68d1aa11, type: 3}
+  - {fileID: 8446045739672223209, guid: 81a3f6a23937c430aa04b0a102a12be4, type: 3}
+  - {fileID: 6498039911908854852, guid: 756617d45cf6447698845f762454b672, type: 3}
 --- !u!114 &1253379535
 MonoBehaviour:
   m_ObjectHideFlags: 0
