@@ -41,25 +41,22 @@ public class DialogSystem : MonoBehaviour
 
     public void Option1Selected() {
         Debug.Log("Option 1 (sushi) selected");
-        StartCoroutine(CookCoroutine());
-        // Show sushi model
+        StartCoroutine(CookCoroutine("Sushi"));
     }
 
     public void Option2Selected()
     {
         Debug.Log("Option 2 (ramen) selected");
-        StartCoroutine(CookCoroutine());
-        // Show ramen model
+        StartCoroutine(CookCoroutine("Ramen"));
     }
 
     public void Option3Selected()
     {
         Debug.Log("Option 3 (pizza) selected");
-        StartCoroutine(CookCoroutine());
-        // Show pizza model
+        StartCoroutine(CookCoroutine("Pizza"));
     }
 
-    IEnumerator CookCoroutine()
+    IEnumerator CookCoroutine(string dish)
     {
         canvas.SetActive(false);
         freezeInteraction = true;
@@ -67,5 +64,6 @@ public class DialogSystem : MonoBehaviour
         yield return new WaitForSeconds(10);
         animator.SetBool("IsCooking", false);
         freezeInteraction = false;
+        GameObject.Find("Dishes").GetComponent<ObjectManipulation>().SetDish(dish);
     }
 }

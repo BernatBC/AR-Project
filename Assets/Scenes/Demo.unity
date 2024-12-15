@@ -867,10 +867,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placeblePrefabs:
   - {fileID: 4693983257612203241, guid: 36a741aa661cdc14c8fbeb87d844d510, type: 3}
-  - {fileID: 4221890653738457552, guid: fad62147b96b34107815245e063b3217, type: 3}
+  - {fileID: 667168202742147799, guid: 7fc23a7ec2dfe454f8c77124d21f0194, type: 3}
   - {fileID: 8471322285504986838, guid: f568ec039cc454216af2741b68d1aa11, type: 3}
-  - {fileID: 8446045739672223209, guid: 81a3f6a23937c430aa04b0a102a12be4, type: 3}
-  - {fileID: 6498039911908854852, guid: 756617d45cf6447698845f762454b672, type: 3}
 --- !u!114 &1253379535
 MonoBehaviour:
   m_ObjectHideFlags: 0

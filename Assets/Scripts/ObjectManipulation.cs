@@ -15,6 +15,10 @@ public class ObjectManipulation : MonoBehaviour
 
     private float initialAngle = 0f;
 
+    public GameObject pizza;
+    public GameObject ramen;
+    public GameObject sushi;
+
     private void Update()
     {
         if (isObjectPlaced)
@@ -28,16 +32,16 @@ public class ObjectManipulation : MonoBehaviour
                     activeTouchCount++;
                 }
             }
-            Debug.Log("Toques detectados: " + activeTouchCount);
+            //Debug.Log("Toques detectados: " + activeTouchCount);
             if (activeTouchCount == 1)
             {
                 var touch = Touchscreen.current.primaryTouch;
-                Debug.Log("Toque detectado.");
+                //Debug.Log("Toque detectado.");
 
                 if (touch.press.isPressed)
                 {
 
-                    Debug.Log("Toque presionado.");
+                    //Debug.Log("Toque presionado.");
 
                     if (!isTouching)
                     {
@@ -61,7 +65,7 @@ public class ObjectManipulation : MonoBehaviour
             
             else if (activeTouchCount == 3)
             {
-                Debug.Log("Tres toques detectados.");
+                //Debug.Log("Tres toques detectados.");
                 var touch1 = Touchscreen.current.touches[0];
                 var touch2 = Touchscreen.current.touches[1];
 
@@ -96,7 +100,7 @@ public class ObjectManipulation : MonoBehaviour
 
     private void ScaleObject(Vector2 position1, Vector2 position2)
     {
-        Debug.Log("Escalar objeto.");
+        //Debug.Log("Escalar objeto.");
         float distanceNow = Vector2.Distance(position1, position2);
         float scaleFactor = distanceNow / initialDistance;
 
@@ -116,7 +120,7 @@ public class ObjectManipulation : MonoBehaviour
         transform.localScale = newScale;
 
 
-        Debug.Log($"Escala aplicada: {transform.localScale}");
+        //Debug.Log($"Escala aplicada: {transform.localScale}");
 
     }
 
@@ -132,7 +136,7 @@ public class ObjectManipulation : MonoBehaviour
 
         transform.Rotate(Vector3.up, angleNow);
 
-        Debug.Log($"Ángulo de rotación: {angleNow}");
+        //Debug.Log($"Ángulo de rotación: {angleNow}");
 
         touchPrevPos = (touch1 + touch2) / 2;
     }
@@ -142,5 +146,16 @@ public class ObjectManipulation : MonoBehaviour
         isObjectPlaced = true;
         touchPrevPos = Touchscreen.current.primaryTouch.position.ReadValue();
         initialDistance = 0;
+    }
+
+    // Ramen, Pizza, Sushi
+    public void SetDish(string dish) {
+        Debug.Log("Setting active: " + dish);
+        ramen.SetActive(false);
+        pizza.SetActive(false);
+        sushi.SetActive(false);
+        if (dish == "Ramen") ramen.SetActive(true);
+        if (dish == "Pizza") pizza.SetActive(true);
+        if (dish == "Sushi") sushi.SetActive(true);
     }
 }
