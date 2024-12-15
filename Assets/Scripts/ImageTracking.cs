@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.ARFoundation;
+using UnityEngine.InputSystem;
+
 
 [RequireComponent(typeof(ARTrackedImageManager))]
 public class ImageTracking : MonoBehaviour
@@ -58,12 +60,20 @@ public class ImageTracking : MonoBehaviour
     private void SetObjectAsChild(ARTrackedImage trackedImage)
     {
         string name = trackedImage.referenceImage.name;
+        Debug.Log("Name: " + name);
+
 
         GameObject prefab = spawnedPrefabs[name];
+        Debug.Log("Prefab: " + prefab.name);
         prefab.transform.SetParent(trackedImage.transform, false);
         prefab.transform.localPosition = Vector3.zero;
         prefab.transform.localRotation = Quaternion.identity;
         prefab.SetActive(true);
+
+        Debug.Log("Object set as child: " + prefab.name);
+
+        prefab.GetComponent<ObjectManipulation>().PlaceObjectOnTracker();
+
     }
 
     private void UpdateImage(ARTrackedImage trackedImage)
